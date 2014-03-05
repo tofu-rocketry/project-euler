@@ -2,6 +2,7 @@
 Module that contains functions that solve Project Euler propblems.
 """
 
+from sys import version_info
 import time
 
 
@@ -556,7 +557,13 @@ def Prob14(limit=1000000):
             count += 1
     #print dic
 
-    return max(dic, key=dic.get)
+    if version_info >= (2, 5):
+        return max(dic, key=dic.get)
+    else:  # Python 2.4 compatible
+        chain = max(dic.values())
+        for key in dic:
+            if dic[key] == chain:
+                return key
 
 
 def Prob15(size=20):
@@ -906,8 +913,11 @@ if __name__ == '__main__':
     prob = 22
     value = ''
 
-    if time_all == 1:
-        print "{:7}  {:8}  {}".format('Problem', 'Time (s)', 'Solution')
+    if time_all == 0:
+        if version_info >= (2, 5):
+            print "{:7}  {:8}  {}".format('Problem', 'Time (s)', 'Solution')
+        else:  # Python 2.4 compatible
+            print "%7s  %8s  %s" % ('Problem', 'Time (s)', 'Solution')
         for i in range(1, 24):
             start = time.clock()
 
@@ -916,7 +926,10 @@ if __name__ == '__main__':
             stop = time.clock()
             elapsed = stop - start
 
-            print "{:7}  {:8.3f}  {}".format(i, elapsed, solution)
+            if version_info >= (2, 5):
+                print "{:7}  {:8.3f}  {}".format(i, elapsed, solution)
+            else:  # Python 2.4 compatible
+                print "%7i  %8.3f  %s" % (i, elapsed, solution)
 
     elif time_all == 0:
         start = time.clock()

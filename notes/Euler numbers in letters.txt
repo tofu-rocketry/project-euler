@@ -1,0 +1,40 @@
+one
+two
+three
+four
+five
+six
+seven
+eight
+nine
+
+ten
+
+eleven
+twelve
+
+thir teen
+for teen
+fif teen
+six teen
+seven teen
+eigh teen
+nine teen
+
+twenty
+
+thir ty
+for ty
+fif ty
+six ty
+seven ty
+eigh ty
+nine ty
+
+dictionry of exceptions (ten, eleven, twelve, twenty)
+dictionary of digits 1-9
+dictionary of parts thir-nine
+
+one thousand two hundred and thir-ty four
+
+only link between positions are teens

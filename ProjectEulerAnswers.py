@@ -909,19 +909,20 @@ def Prob23():
 
 if __name__ == '__main__':
 
-    time_all = 0        # Flag for whether all problems will be timed
+    time_all = 1        # Flag for whether all problems will be timed
     prob = 22
-    value = ''
+    value = None
 
-    if time_all == 0:
+    if time_all == 1:
         if version_info >= (2, 5):
             print "{:7}  {:8}  {}".format('Problem', 'Time (s)', 'Solution')
         else:  # Python 2.4 compatible
             print "%7s  %8s  %s" % ('Problem', 'Time (s)', 'Solution')
+
         for i in range(1, 24):
             start = time.clock()
 
-            solution = eval('Prob' + str(i) + '()')
+            solution = globals()['Prob' + str(i)]()
 
             stop = time.clock()
             elapsed = stop - start
@@ -934,7 +935,10 @@ if __name__ == '__main__':
     elif time_all == 0:
         start = time.clock()
 
-        solution = eval('Prob' + str(prob) + '(' + str(value) + ')')
+        if value is None:
+            solution = globals()['Prob' + str(prob)]()
+        else:
+            solution = globals()['Prob' + str(prob)](value)
 
         stop = time.clock()
         elapsed = stop - start

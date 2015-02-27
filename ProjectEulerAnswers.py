@@ -6,6 +6,31 @@ from sys import version_info
 import time
 
 
+def sum_of_divs(num):
+    if num == 1:
+        return 0
+    t = 1
+
+    if num % 2 != 0:
+        initial = 3
+        step = 2
+    else:
+        initial = 2
+        step = 1
+
+    if int(num ** 0.5) ** 2 == num:
+        t += int(num ** 0.5)
+        end = int(num ** 0.5)
+    else:
+        end = int(num ** 0.5) + 1
+
+    for i in xrange(initial, end, step):
+        if num % i == 0:
+            t += i + num / i
+
+    return t
+
+
 def prob1(limit=1000):
     """
     If we list all the natural numbers below 10 that are multiples of 3 or 5,
@@ -754,29 +779,6 @@ def prob21(limit=10000):
 
     Evaluate the sum of all the amicable numbers under 10000.
     """
-    def sum_of_divs(num):
-        if num == 1:
-            return 0
-        t = 1
-
-        if num % 2 != 0:
-            start = 3
-            step = 2
-        else:
-            start = 2
-            step = 1
-
-        if int(num ** 0.5) ** 2 == num:
-            t += int(num ** 0.5)
-            end = int(num ** 0.5)
-        else:
-            end = int(num ** 0.5) + 1
-
-        for i in xrange(start, end, step):
-            if num % i == 0:
-                t += i + num / i
-
-        return t
 
     total = 0
 
@@ -856,30 +858,6 @@ def prob23():
     Find the sum of all the positive integers which cannot be written as the
     sum of two abundant numbers.
     """
-
-    def sum_of_divs(num):
-        if num == 1:
-            return 0
-        t = 1
-
-        if num % 2 != 0:
-            start = 3
-            step = 2
-        else:
-            start = 2
-            step = 1
-
-        if int(num ** 0.5) ** 2 == num:
-            t += int(num ** 0.5)
-            end = int(num ** 0.5)
-        else:
-            end = int(num ** 0.5) + 1
-
-        for i in xrange(start, end, step):
-            if num % i == 0:
-                t += i + num / i
-
-        return t
 
     abuns = []
 

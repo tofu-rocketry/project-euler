@@ -877,8 +877,8 @@ def prob23():
                 tests[abuns[i] + abuns[j]] = 0
                 j += 1
         except IndexError:
-            print i, j
-            print abuns[i] + abuns[j]
+            print(i, j)
+            print(abuns[i] + abuns[j])
             raise
 
     #print tests
@@ -893,11 +893,11 @@ if __name__ == '__main__':
 
     if time_all == 1:
         if version_info >= (2, 7):
-            print "{:7}  {:8}  {}".format('Problem', 'Time (s)', 'Solution')
+            print("{:7}  {:8}  {}".format('Problem', 'Time (s)', 'Solution'))
         elif version_info == (2, 6):  # Python 2.6 requires field names
-            print "{0:7}  {1:8}  {2}".format('Problem', 'Time (s)', 'Solution')
+            print("{0:7}  {1:8}  {2}".format('Problem', 'Time (s)', 'Solution'))
         else:  # Python 2.4 compatible
-            print "%7s  %8s  %s" % ('Problem', 'Time (s)', 'Solution')
+            print("%7s  %8s  %s" % ('Problem', 'Time (s)', 'Solution'))
 
         for problem in range(1, 24):
             start = time.clock()
@@ -908,11 +908,11 @@ if __name__ == '__main__':
             elapsed = stop - start
 
             if version_info >= (2, 7):
-                print "{:7}  {:8.3f}  {}".format(problem, elapsed, solution)
+                print("{:7}  {:8.3f}  {}".format(problem, elapsed, solution))
             elif version_info == (2, 6):  # Python 2.6 requires field names
-                print "{0:7}  {1:8.3f}  {2}".format(problem, elapsed, solution)
+                print("{0:7}  {1:8.3f}  {2}".format(problem, elapsed, solution))
             else:  # Python 2.4 compatible
-                print "%7i  %8.3f  %s" % (problem, elapsed, solution)
+                print("%7i  %8.3f  %s" % (problem, elapsed, solution))
 
     elif time_all == 0:
         start = time.clock()
@@ -925,7 +925,7 @@ if __name__ == '__main__':
         stop = time.clock()
         elapsed = stop - start
 
-        print "Problem:", prob
-        print "Solution:", solution
-        print "Time to find solution: %.3f s" % elapsed
-        print
+        print("Problem:", prob)
+        print("Solution:", solution)
+        print("Time to find solution: %.3f s" % elapsed)
+        print()

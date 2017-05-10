@@ -892,8 +892,10 @@ if __name__ == '__main__':
     value = None
 
     if time_all == 1:
-        if version_info >= (2, 5):
+        if version_info >= (2, 7):
             print "{:7}  {:8}  {}".format('Problem', 'Time (s)', 'Solution')
+        elif version_info == (2, 6):  # Python 2.6 requires field names
+            print "{0:7}  {1:8}  {2}".format('Problem', 'Time (s)', 'Solution')
         else:  # Python 2.4 compatible
             print "%7s  %8s  %s" % ('Problem', 'Time (s)', 'Solution')
 
@@ -905,8 +907,10 @@ if __name__ == '__main__':
             stop = time.clock()
             elapsed = stop - start
 
-            if version_info >= (2, 5):
+            if version_info >= (2, 7):
                 print "{:7}  {:8.3f}  {}".format(problem, elapsed, solution)
+            elif version_info == (2, 6):  # Python 2.6 requires field names
+                print "{0:7}  {1:8.3f}  {2}".format(problem, elapsed, solution)
             else:  # Python 2.4 compatible
                 print "%7i  %8.3f  %s" % (problem, elapsed, solution)
 

@@ -24,5 +24,11 @@ class TestEuler(unittest.TestCase):
     def test_prob4(self):
         self.assertEqual(pea.prob4(2), 9009)
 
+    def test_prob5(self):
+        self.assertEqual(pea.prob5(10), 2520)
+
+    def test_prob6(self):
+        self.assertEqual(pea.prob6(10), 2640)
+
 if __name__ == '__main__':
     unittest.main()

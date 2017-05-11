@@ -4,11 +4,14 @@ Module that contains functions that solve Project Euler propblems.
 
 # The import of print_function can be removed if running on Python 2.4.
 from __future__ import print_function  # Python 2.6 or 2.7 required
-from functools import reduce  # For Python 3.0 compatibility.
+from functools import reduce  # For Python 3.x compatibility.
 
 from sys import version_info
 import time
 
+
+if version_info >= (3, 0):  # For Python 3.x compatibility.
+    xrange = range
 
 def sum_of_divs(num):
     if num == 1:

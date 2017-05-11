@@ -30,5 +30,30 @@ class TestEuler(unittest.TestCase):
     def test_prob6(self):
         self.assertEqual(pea.prob6(10), 2640)
 
+    def test_prob7(self):
+        self.assertEqual(pea.prob7(6), 13)
+
+    def test_prob10(self):
+        # TODO: Check boundary is correct - open/closed
+        self.assertEqual(pea.prob10(9), 17)
+
+    def test_prob12(self):
+        self.assertEqual(pea.prob12(5), 28)
+
+    def test_prob15(self):
+        self.assertEqual(pea.prob15(2), 6)
+
+    def test_prob16(self):
+        self.assertEqual(pea.prob16(15), 26)
+
+    def test_prob17(self):
+        self.assertEqual(pea.prob17(5), 19)
+
+    def test_prob18(self):
+        self.assertEqual(pea.prob18('triangle1.txt'), 23)
+
+    def test_prob20(self):
+        self.assertEqual(pea.prob20(10), 27)
+
 if __name__ == '__main__':
     unittest.main()

@@ -10,6 +10,9 @@ import ProjectEulerAnswers as pea
 
 class TestEuler(unittest.TestCase):
 
+    def test_sumofdivs(self):
+        self.assertEqual(pea.sum_of_divs(220), 284)
+
     def test_prob1(self):
         self.assertEqual(pea.prob1(10), 23)
 

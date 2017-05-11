@@ -50,7 +50,7 @@ class TestEuler(unittest.TestCase):
         self.assertEqual(pea.prob17(5), 19)
 
     def test_prob18(self):
-        self.assertEqual(pea.prob18('triangle1.txt'), 23)
+        self.assertEqual(pea.prob18(path.join('..', '..', 'triangle1.txt')), 23)
 
     def test_prob20(self):
         self.assertEqual(pea.prob20(10), 27)

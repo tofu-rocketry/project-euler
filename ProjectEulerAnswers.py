@@ -4,6 +4,7 @@ Module that contains functions that solve Project Euler propblems.
 
 # The import of print_function can be removed if running on Python 2.4.
 from __future__ import print_function  # Python 2.6 or 2.7 required
+from functools import reduce  # For Python 3.0 compatibility.
 
 from sys import version_info
 import time
@@ -110,7 +111,7 @@ def prob4(dig=3):
             prod = str(i * j)
 
             #if len(prod) % 2 == 0:
-            half = len(prod) / 2
+            half = len(prod) // 2
             palin = [0] * half
             for k in range(half):
                 if prod[k] == prod[-k - 1]:
@@ -301,8 +302,7 @@ def prob10(limit=2000000):
     #                a += add
     #                break
     #return reduce(lambda x,y: x+y, primes)
-
-    sieve = range(limit)
+    sieve = list(range(limit))
     #print sieve
     sieve[1] = 0
     for n in xrange(4, limit, 2):

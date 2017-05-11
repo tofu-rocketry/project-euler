@@ -20,6 +20,6 @@ before_script:
   - export PYTHONPATH=$PYTHONPATH:$(pwd -P)
   - cd project_euler/test
 
-script: coverage run --source="../.." -m unittest2 discover --buffer
+script: coverage run --branch --source="../.." -m unittest2 discover --buffer
 
 after_success: coveralls

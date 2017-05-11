@@ -7,4 +7,4 @@
 
 Code for solving problems from [Project Euler](https://projecteuler.net/). Released under the MIT licence (see LICENCE.txt).
 
-Compatible with Python 2.4 to 2.7.
+Compatible with Python 2.6 to 2.7.

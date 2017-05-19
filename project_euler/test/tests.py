@@ -36,12 +36,28 @@ class TestEuler(unittest.TestCase):
     def test_prob7(self):
         self.assertEqual(pea.prob7(6), 13)
 
+    def test_prob8(self):
+        # TODO: Check why outputting string
+        self.assertEqual(pea.prob8(1), str(9))
+        self.assertEqual(pea.prob8(2), 81)
+
+    def test_prob9(self):
+        self.assertEqual(pea.prob9(3 + 4 + 5), 3 * 4 * 5)
+
     def test_prob10(self):
         # TODO: Check boundary is correct - open/closed
         self.assertEqual(pea.prob10(9), 17)
 
+    def test_prob11(self):
+        self.assertEqual(pea.prob11(1), 99)
+
     def test_prob12(self):
         self.assertEqual(pea.prob12(5), 28)
+
+    # TODO: prob13
+
+    def test_prob14(self):
+        self.assertEqual(pea.prob14(2), 1)
 
     def test_prob15(self):
         self.assertEqual(pea.prob15(2), 6)
@@ -54,6 +70,8 @@ class TestEuler(unittest.TestCase):
 
     def test_prob18(self):
         self.assertEqual(pea.prob18(path.join('..', '..', 'triangle1.txt')), 23)
+
+    # TODO: prob19
 
     def test_prob20(self):
         self.assertEqual(pea.prob20(10), 27)

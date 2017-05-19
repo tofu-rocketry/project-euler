@@ -249,7 +249,7 @@ def prob8(consec=5):
     return biggest
 
 
-def prob9():
+def prob9(total=1000):
     """
     A Pythagorean triplet is a set of three natural numbers, a < b < c, for
     which, a**2 + b**2 = c**2
@@ -262,9 +262,9 @@ def prob9():
     a = 1
 
     while True:
-        for i in range(2, 1000):
+        for i in range(2, total):
             b = i
-            c = 1000 - a - b
+            c = total - a - b
             if a ** 2 + b ** 2 == c ** 2:
                 return a * b * c
         a += 1

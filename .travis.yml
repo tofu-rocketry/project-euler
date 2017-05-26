@@ -18,7 +18,7 @@ sudo: false
 
 cache: pip
 # Avoid pip log from affecting cache.
-before_cache: rm -f $HOME/.cache/pip/log/debug.log
+before_cache: rm -fv $"TRAVIS_BUILD_DIR"/.cache/pip/log/debug.log
 
 install:
   - pip install unittest2

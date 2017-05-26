@@ -37,8 +37,7 @@ class TestEuler(unittest.TestCase):
         self.assertEqual(pea.prob7(6), 13)
 
     def test_prob8(self):
-        # TODO: Check why outputting string
-        self.assertEqual(pea.prob8(1), str(9))
+        self.assertEqual(pea.prob8(1), 9)
         self.assertEqual(pea.prob8(2), 81)
 
     def test_prob9(self):

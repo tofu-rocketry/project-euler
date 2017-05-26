@@ -240,7 +240,7 @@ def prob8(consec=5):
     while i + consec <= len(num):
         digits = num[i:i + consec]
         #print digits
-        temp = reduce(lambda x, y: int(x) * int(y), digits)
+        temp = int(reduce(lambda x, y: int(x) * int(y), digits))
         #print a2
         if temp > biggest:
             biggest = temp

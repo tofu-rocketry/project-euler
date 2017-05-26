@@ -1,8 +1,9 @@
 # Hack to allow import of ProjectEulerAnswers while it is still at top level.
-from os import path
+from os import path, remove
 import sys
 sys.path.append(path.dirname(path.dirname(path.dirname(path.abspath(__file__ )))))
 
+import tempfile
 import unittest
 
 import ProjectEulerAnswers as pea
@@ -74,6 +75,19 @@ class TestEuler(unittest.TestCase):
 
     def test_prob20(self):
         self.assertEqual(pea.prob20(10), 27)
+
+    def test_prob21(self):
+        self.assertEqual(pea.prob21(300), 220 + 284)
+        self.assertEqual(pea.prob21(1500), sum((220, 284, 1184, 1210)))
+
+    def test_prob22(self):
+        names = tempfile.NamedTemporaryFile(delete=False)
+        with names:
+            names.write('"ABBA"')
+        try:
+            self.assertEqual(pea.prob22(names.name), 6)
+        finally:
+            remove(names.name)
 
 if __name__ == '__main__':
     unittest.main()

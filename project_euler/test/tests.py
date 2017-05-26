@@ -82,8 +82,9 @@ class TestEuler(unittest.TestCase):
 
     def test_prob22(self):
         names = tempfile.NamedTemporaryFile(delete=False)
+        # Not Python 2.4 compatible
         with names:
-            names.write('"ABBA"')
+            names.write(b'"ABBA"')  # Needs to be byte object for Python 3
         try:
             self.assertEqual(pea.prob22(names.name), 6)
         finally:

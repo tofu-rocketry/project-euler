@@ -17,6 +17,8 @@ matrix:
 sudo: false
 
 cache: pip
+# Avoid pip log from affecting cache.
+before_cache: rm -f $HOME/.cache/pip/log/debug.log
 
 install:
   - pip install unittest2

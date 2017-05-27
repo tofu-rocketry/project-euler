@@ -893,11 +893,12 @@ def prob23():
 
 if __name__ == '__main__':
 
-    time_all = 1        # Flag for whether all problems will be timed
+    # Flag for whether all problems will be timed
+    time_all = True
     prob = 22
     value = None
 
-    if time_all == 1:
+    if time_all:
         if version_info >= (2, 7):
             print("{:7}  {:8}  {}".format('Problem', 'Time (s)', 'Solution'))
         elif version_info == (2, 6):  # Python 2.6 requires field names
@@ -920,7 +921,7 @@ if __name__ == '__main__':
             else:  # Python 2.4 compatible
                 print("%7i  %8.3f  %s" % (problem, elapsed, solution))
 
-    elif time_all == 0:
+    elif not time_all:
         start = time.clock()
 
         if value is None:

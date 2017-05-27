@@ -843,7 +843,7 @@ def prob22(f='names.txt'):
     return ans
 
 
-def prob23():
+def prob23(limit=28123):
     """
     A perfect number is a number for which the sum of its proper divisors is
     exactly equal to the number. For example, the sum of the proper divisors of
@@ -867,13 +867,13 @@ def prob23():
 
     abuns = []
 
-    for i in xrange(12, 28123 - 12 + 1):
+    for i in xrange(12, limit - 12 + 1):
         if sum_of_divs(i) > i:
             abuns.append(i)
 
     #print len(abuns)
 
-    tests = range(28123 + 1)
+    tests = range(limit + 1)
 
     for i in xrange(len(abuns)):
         j = i
@@ -887,7 +887,7 @@ def prob23():
             print(abuns[i] + abuns[j])
             raise
 
-    #print tests
+    # print(tests)
     return sum(tests)
 
 

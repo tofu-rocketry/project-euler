@@ -90,7 +90,9 @@ class TestEuler(unittest.TestCase):
         finally:
             remove(names.name)
 
-    # TODO: def test_prob23(self):
+    def test_prob23(self):
+        self.assertEqual(pea.prob23(24), sum(range(24)))
+
 
 if __name__ == '__main__':
     unittest.main()

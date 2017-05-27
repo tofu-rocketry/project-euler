@@ -93,6 +93,8 @@ class TestEuler(unittest.TestCase):
     def test_prob23(self):
         self.assertEqual(pea.prob23(24), sum(range(24)))
 
+    def test_prob67(self):
+        self.assertEqual(pea.prob67(path.join('..', '..', 'triangle1.txt')), 23)
 
 if __name__ == '__main__':
     unittest.main()

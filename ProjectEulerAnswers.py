@@ -873,7 +873,7 @@ def prob23(limit=28123):
 
     #print len(abuns)
 
-    tests = range(limit + 1)
+    tests = list(range(limit + 1))
 
     for i in xrange(len(abuns)):
         j = i
